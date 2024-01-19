@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "autoprefixer": "^10.4.16",
+    "autoprefixer": "^10.4.17",
     "concurrently": "^8.2.2",
     "flowbite-react": "^0.7.2",
     "postcss": "^8.4.33"

@@ -1,2 +1,4 @@
 *.psd filter=lfs diff=lfs merge=lfs -text
 node_modules/** filter=lfs diff=lfs merge=lfs -text
+/frontend/node_modules/** filter=lfs diff=lfs merge=lfs -text
+/backend/node_modules/** filter=lfs diff=lfs merge=lfs -text
