@@ -141,7 +141,7 @@ router.post("/", async (req, res) => {
     await collection.insertOne(newBook, { timeout: 30000 }).then((answer) => {
       res.status(201).send(answer);
     }); // 30 seconds timeout
-    res.status(201).send(result);
+    //res.status(201).send(result);
   } catch (error) {
     console.error("Error inserting document:", error);
     res.status(500).json({ error: "Internal Server Error" });
