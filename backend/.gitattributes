@@ -1,1 +1,4 @@
 node_modules/** filter=lfs diff=lfs merge=lfs -text
+node_modules/.cache/default-development/4.pack filter=lfs diff=lfs merge=lfs -text
+node_modules/@next/swc-win32-x64-msvc/next-swc.win32-x64-msvc.node filter=lfs diff=lfs merge=lfs -text
+node_modules/.cache/default-development/11.pack filter=lfs diff=lfs merge=lfs -text
