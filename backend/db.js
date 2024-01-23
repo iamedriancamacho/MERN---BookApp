@@ -1,9 +1,10 @@
 import { MongoClient } from "mongodb";
-import { cosmosDbConnectionString } from "./config.js";
+import dotenv from "dotenv";
+dotenv.config(); // Load environment variables from .env file
 
 export async function connectToCosmosDB() {
   try {
-    const client = new MongoClient(cosmosDbConnectionString, {});
+    const client = new MongoClient(process.env.COSMOSDB_CONNECTIONSTRING, {});
     await client.connect().then(() => {
       console.log("Connected to Azure Cosmos DB for MongoDB");
     });

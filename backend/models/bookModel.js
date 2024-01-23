@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-import { collectionName } from "../config.js";
+import dotenv from "dotenv";
+dotenv.config(); // Load environment variables from .env file
 
 const bookSchema = new mongoose.Schema({
   _id: {
@@ -18,7 +19,7 @@ const bookSchema = new mongoose.Schema({
   genre: {
     required: true,
     type: String,
-    immutable: false
+    immutable: false,
   },
   publicationYear: {
     required: true,
@@ -30,4 +31,4 @@ const bookSchema = new mongoose.Schema({
     default: () => new Date(), // Use a function to set the default value to the current UTC timestamp
   },
 });
-export const Book = mongoose.model(collectionName, bookSchema);
+export const Book = mongoose.model(process.env.COLLECTIONNAME, bookSchema);

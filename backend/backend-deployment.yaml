@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: testregistrybookapp.azurecr.io/backend:latest
+        ports:
+        - containerPort: 5555
+        env:
+        - name: COSMOSDB_CONNECTION_STRING
+          value: "mongodb://iamedriancamacho:0InTuODdti8xjCt7th1zCcUC5Yg4mxSskO6H5jic2xcw0DDhZCGuWuP29lp3aQsHfEhvmnBwsbbrACDbqbVo5g==@iamedriancamacho.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@iamedriancamacho@"

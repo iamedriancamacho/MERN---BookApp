@@ -1,8 +1,9 @@
 import express from "express";
 import { connectToCosmosDB } from "./db.js";
-import { PORT } from "./config.js";
 import { router } from "./routes/booksRoute.js";
 import cors from "cors";
+import dotenv from "dotenv";
+dotenv.config(); // Load environment variables from .env file
 
 const app = express();
 //Middleware to parse request.body
@@ -20,8 +21,8 @@ app.use(
 
 //Database connection
 connectToCosmosDB().finally(
-  app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+  app.listen(process.env.PORT, () => {
+    console.log(`Server running at http://localhost:${process.env.PORT}`);
   })
 );
 

@@ -2,13 +2,15 @@ import express from "express";
 import { MongoClient } from "mongodb";
 import { Book } from "../models/bookModel.js";
 import { uuid } from "uuidv4";
-import {
-  databaseName,
-  collectionName,
-  cosmosDbConnectionString,
-} from "../config.js";
+
+import dotenv from "dotenv";
+dotenv.config(); // Load environment variables from .env file
 
 export const router = express.Router();
+
+const cosmosDbConnectionString = process.env.COSMOSDB_CONNECTIONSTRING;
+const databaseName = process.env.DATABASENAME;
+const collectionName = process.env.COLLECTIONNAME;
 
 //MongoDB connection
 const client = new MongoClient(cosmosDbConnectionString, {});
